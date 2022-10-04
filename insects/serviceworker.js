@@ -12,6 +12,8 @@ self.addEventListener('install', function(event) {
 
 
 // fetch from cache
+// .catch -> if the content isn't found online, it fetches it from the cache
+// https://developer.mozilla.org/en-US/docs/Web/API/Cache
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     fetch(event.request).catch(() =>
