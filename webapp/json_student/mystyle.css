@@ -1,0 +1,26 @@
+.member {
+    display: flex;
+    width: 700px;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.names {
+    font-family: Arial, Helvetica, sans-serif;
+    color:darkgreen;
+}
+
+.age {
+    color:saddlebrown;
+    font-weight: bold;
+}
+
+/* avatar image from pixabay.com */
+/* https://pixabay.com/da/service/license/ */
+.image {
+    width: 50px;
+}

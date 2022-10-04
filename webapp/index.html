@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="manifest" href="/cat/manifest.json">
+    <link rel="icon" href="/cat/icons/icon-192.png" />
+</head>
+<body>
+    <main>
+        <h1>Cats and dogs</h1>
+    </main>
+    
+    <script>
+        // https://www.w3schools.com/jsref/obj_navigator.asp -> navigator object
+        // asking the browser if it supports serviceworker
+
+        //Asking the browser if it supports serviceWorker 
+        if ('serviceWorker' in navigator) {
+            console.log("Serviceworker is available")
+            navigator.serviceWorker.register("/cat/serviceworker.js")
+        }
+        else {
+            console.log("Serviceworker is not available")
+        }
+    </script>
+</body>
+</html>
