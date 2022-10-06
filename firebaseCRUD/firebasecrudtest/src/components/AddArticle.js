@@ -7,6 +7,10 @@ import { toast } from 'react-toastify'
 export default function AddArticle() {
   const [formData, setFormData] = useState({
     title: "",
+    author: "",
+    ISBN: "",
+    edition: "",
+    language: "",
     description: "",
     image: "",
     createdAt: Timestamp.now().toDate(),
@@ -45,6 +49,10 @@ export default function AddArticle() {
     ()=>{
       setFormData({
         title: "",
+        author: "",
+        ISBN: "",
+        edition: "",
+        language: "",
         description: "",
         image: "",
       })
@@ -56,6 +64,10 @@ export default function AddArticle() {
         addDoc(articleRef, {
           title: formData.title,
           description: formData.description,
+          author: formData.author,
+          ISBN: formData.ISBN,
+          edition: formData.edition,
+          language: formData.language,
           imageUrl: url,
           createdAt: Timestamp.now().toDate(),
         })
@@ -74,13 +86,29 @@ export default function AddArticle() {
 
 
   return (
-    <div className="border p-3 mt-3 bg-light" style={{position: "fixed"}}>
+    <div className="border p-3 mt-3 d-flex flex-column gap-2 bg-light" style={{position: "fixed"}}>
       <h2>Create article</h2>
       
       {/* title */}
       <label htmlFor="">Title</label>
       <input type="text" name="title" className="form-control" value={formData.title} onChange={(e)=>handleChange(e)}/>
       
+      {/* author */}
+      <label htmlFor="">Author</label>
+      <input type="text" name="author" className="form-control" value={formData.author} onChange={(e)=>handleChange(e)}/>
+
+      {/* ISBN */}
+      <label htmlFor="">ISBN</label>
+      <input type="text" name="ISBN" className="form-control" value={formData.ISBN} onChange={(e)=>handleChange(e)}/>
+
+      {/* Edition */}
+      <label htmlFor="">Edition</label>
+      <input type="text" name="edition" className="form-control" value={formData.edition} onChange={(e)=>handleChange(e)}/>
+
+      {/* Language */}
+      <label htmlFor="">Language</label>
+      <input type="text" name="language" className="form-control" value={formData.language} onChange={(e)=>handleChange(e)}/>      
+ 
       {/* description */}
       <label htmlFor="">Description</label>
       <textarea name="description" className="form-control" value={formData.description} onChange={(e)=>handleChange(e)}/>

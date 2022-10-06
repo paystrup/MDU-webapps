@@ -28,16 +28,20 @@ export default function Articles() {
     <div>{
       articles.length === 0 ? (
       <p>No articles found</p> ):(
-        articles.map(({id, title, description, imageUrl, createdAt})=> (
+        articles.map(({id, title, author, ISBN, edition, language, description, imageUrl, createdAt})=> (
           <div className="border mt-3 p-3 bg-light" key={id}>
             <div className="row">
               <div className="col-3">
                 <img src={imageUrl} alt="title" style={{height: 180, width:180}} />
               </div>
-              <div className="col-9 ps-3">
+              <div className="col-9 ps-4">
                 <h2>{title}</h2>
-                <p>{createdAt.toDate().toDateString()}</p>
-                <h4>{description}</h4>
+                <h6>Date: {createdAt.toDate().toDateString()}</h6>
+                <p>Author: {author}</p>
+                <p>ISBN: {ISBN}</p>
+                <p>Edition: {edition}</p>
+                <p>Language: {language}</p>
+                <p>Description: {description}</p>
               </div>
           </div>
           </div>
